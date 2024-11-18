@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 1</title>
+    <style>
+        #imagen {
+            background-color: black;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pulsa ALT + F12 para cambiar la imagen de fondo</h1>
+    <img id="imagen" style="max-width: 100%; max-height: 100%;">
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.altKey && event.key == "F12") {
+                let imgElement = document.getElementById("imagen");
+                imgElement.src = `https://picsum.photos/200/300?random=${Date.now()}`;
+            }
+        });
+    </script>
+</body>
+</html>
